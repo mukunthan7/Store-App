@@ -21,7 +21,8 @@ CREATE TABLE "Product" (
 CREATE TABLE "Transaction" (
     "id" TEXT NOT NULL,
     "productId" TEXT NOT NULL,
-    "quantity" INTEGER NOT NULL,
+    "quantity" TEXT NOT NULL,
+    "date" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Transaction_pkey" PRIMARY KEY ("id")
 );
@@ -30,7 +31,7 @@ CREATE TABLE "Transaction" (
 CREATE TABLE "Distribution" (
     "id" TEXT NOT NULL,
     "TransactionId" TEXT NOT NULL,
-    "quantity" INTEGER NOT NULL,
+    "quantity" TEXT NOT NULL,
     "Buyer" TEXT NOT NULL,
     "collegeName" TEXT NOT NULL,
     "Department" TEXT NOT NULL,
